@@ -1,0 +1,103 @@
+{%extends "home.html" %}
+{%block content%}
+
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+ <div class="card text-center">
+        <div class="card-header">
+        <strong>   Original Entered Review : </strong>
+        </div>
+        <div class="card-body">
+            
+            <p id="new" class="card-text">
+            
+             {{ rawtext }}
+            </p>
+
+        </div>
+      
+    </div>
+    <div class="card text-center">
+        <div class="card-header">
+        <strong>   Clean Review : </strong>
+        </div>
+        <div class="card-body">
+            
+            <p id="new" class="card-text">
+            
+             {{ cleantext }}
+            </p>
+
+        </div>
+      
+    </div>
+
+
+ 
+
+ <div class="card text-center">
+  <div class="card-header">
+  <strong>   Predicted Medical Condition</strong>
+  </div>
+  <div class="card-body">
+      
+      <p id="new" class="card-text">
+      
+       {{ result }}
+      </p>
+
+  </div>
+
+</div>
+
+
+   <div class="card text-center">
+        <div class="card-header">
+          <strong> <i class="fas fa-file-export"></i>Top 3 Recommended Drugs:  </strong>
+        </div>
+        <div class="card-body">
+       <table align="center">
+       
+                   <tr>
+                    {% for top_drug in top_drugs %}
+                        <th>
+                        
+                        
+                          
+                 <p class="round1">{{ top_drug }}</p>
+               
+
+              
+                        
+                        
+                        
+                        
+                        </th>
+                        {% endfor %}
+                </tr>
+       
+        </table>
+     
+        </div>
+      
+    </div>
+    
+    <br>
+    <br>
+    <p style="text-align: center;" class="font-weight-bold">Not Sure Which Doctor to Consult?<br>
+        We are Here to Help!<br>
+        Safest Treatment by Expert Doctors in India.</p>
+    <a style="display: flex; justify-content: center; align-items: center; text-decoration: none; " href="/book"><button type="button" class="btn btn-secondary" >Book appointment</button></a>
+ 
+  
+
+  
+
+  
+
+{% endblock %}
+
+
+
